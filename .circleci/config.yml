@@ -43,6 +43,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install PHP libzip-dev
+          command: sudo apt-get install -y libzip-dev
+      - run:
           name: Composer install
           command: composer install -n --prefer-dist
       - run:
