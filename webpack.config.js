@@ -5,6 +5,7 @@ Encore
     .setPublicPath('/build')
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
+    .addPlugin('uglifyjs-webpack-plugin')
     .addEntry('js/app', [
         './node_modules/jquery/dist/jquery.slim.js',
         './node_modules/popper.js/dist/popper.min.js',
