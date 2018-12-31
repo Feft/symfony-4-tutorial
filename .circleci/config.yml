@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/micropost
     docker:
       - image: circleci/php:7.2.4-apache-stretch-node-browsers
+#      - image: circleci/php:7.0-browsers
         environment:
           APP_ENV: test
           DATABASE_URL: mysql://root:root@127.0.0.1/micro-post
@@ -17,7 +18,7 @@ jobs:
       - checkout
       - run:
           name: Install PHP MySQL
-          command: sudo docker-php-ext-install pdo_mysql
+          command: sudo docker-php-ext-install zip pdo_mysql
       - run:
           name: Wait for MySQL
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
