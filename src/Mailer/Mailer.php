@@ -43,7 +43,9 @@ class Mailer
             ->setSubject('Welcome to the micro-post app!')
             ->setFrom($this->mailFrom)
             ->setTo($user->getEmail())
-            ->setBody($body, 'text/html');
+            ->setBody($body, 'text/html')
+//            ->setBody(htmlspecialchars(trim(strip_tags($body))), 'text/plain')
+        ;
 
         $this->mailer->send($message);
     }
