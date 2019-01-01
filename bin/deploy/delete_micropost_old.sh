@@ -1,1 +1,0 @@
-if [ -d /var/www/micropost_old ]; then rm -R /var/www/micropost_old; fi
